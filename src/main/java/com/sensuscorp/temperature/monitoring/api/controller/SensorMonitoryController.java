@@ -3,7 +3,7 @@ package com.sensuscorp.temperature.monitoring.api.controller;
 import com.sensuscorp.temperature.monitoring.api.model.SensorMonitoringOutput;
 import com.sensuscorp.temperature.monitoring.domain.model.SensorId;
 import com.sensuscorp.temperature.monitoring.domain.model.SensorMonitoring;
-import com.sensuscorp.temperature.monitoring.domain.repository.SensorMonitoryRepository;
+import com.sensuscorp.temperature.monitoring.domain.repository.SensorMonitoringRepository;
 import io.hypersistence.tsid.TSID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/sensors/{sensorId}/monitoring")
 @RequiredArgsConstructor
 public class SensorMonitoryController {
-    private final SensorMonitoryRepository repository;
+    private final SensorMonitoringRepository repository;
 
     @GetMapping
     public SensorMonitoringOutput getDetail(@PathVariable TSID sensorId){
